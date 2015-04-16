@@ -1,0 +1,14 @@
+<apex:page Controller="selectionParametersView"> 
+<apex:form >
+   <apex:pageBlock id="pgBlock" title="Program" mode="edit">
+      <apex:pageBlockTable value="{!listPrograms}" var="program" columnswidth="100px,100px,10px,100px" id="out">
+         <apex:column value="{!program.Name}"/>
+         <apex:column value="{!program.Description__c}"/>
+         <apex:column value="{!program.user_id__c}"/>
+         <apex:column value="{!program.Calendar_id__c}"/>
+      </apex:pageBlockTable>
+   </apex:pageBlock>
+   <apex:commandButton value="Add Programs" action="{!addPrograms}" rerender="out" status="status"/>
+   <apex:commandButton value="Back" action="{!back}" rerender="out" status="status"/>
+</apex:form>
+</apex:page>
